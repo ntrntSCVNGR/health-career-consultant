@@ -1,6 +1,19 @@
+/* src/index.css */
+
+/* Tailwind base styles */
 @tailwind base;
+
+/* Tailwind component classes */
 @tailwind components;
+
+/* Tailwind utility classes */
 @tailwind utilities;
+
+/* Your custom styles can go here */
+body {
+  font-family: system-ui, sans-serif;
+}
+
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
