@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 name: Deploy Vite + Tailwind to GitHub Pages
+=======
+name: Build and Deploy Vite + Tailwind to GitHub Pages
+>>>>>>> 115b605 (Update deploy workflow and Vite config)
 
 # Trigger on push to main branch
 on:
@@ -6,14 +10,21 @@ on:
     branches:
       - main
 
+<<<<<<< HEAD
 # Required permissions for deploy-pages
 permissions:
   contents: write       # required to push to repo
   id-token: write       # required for actions/deploy-pages@v4 OIDC
+=======
+permissions:
+  contents: write
+  id-token: write
+>>>>>>> 115b605 (Update deploy workflow and Vite config)
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+<<<<<<< HEAD
 
     steps:
       # Checkout repository
@@ -21,11 +32,21 @@ jobs:
         uses: actions/checkout@v3
 
       # Set up Node.js
+=======
+
+    steps:
+      # 1️⃣ Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2️⃣ Setup Node.js
+>>>>>>> 115b605 (Update deploy workflow and Vite config)
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
+<<<<<<< HEAD
       # Install dependencies
       - name: Install dependencies
         run: npm ci
@@ -35,5 +56,22 @@ jobs:
         run: npm run build
 
       # Deploy to GitHub Pages
+=======
+      # 3️⃣ Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # 4️⃣ Build the project
+      - name: Build project
+        run: npm run build
+
+      # 5️⃣ Upload Pages artifact (correct action for GitHub Pages)
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      # 6️⃣ Deploy to GitHub Pages
+>>>>>>> 115b605 (Update deploy workflow and Vite config)
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
