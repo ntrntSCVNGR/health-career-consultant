@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import react from '@vitejs/plugin-react'
 export default defineConfig({
-  base: '/health-career-consultant/', // <-- This is important for GitHub Pages
-  plugins: [vue()],
+  plugins: [react()],
+  base: '/health-career-consultant/', // 👈 your repo name
 })
