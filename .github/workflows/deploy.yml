@@ -7,11 +7,12 @@ on:
 
 permissions:
   contents: write
-  id-token: write   # Required for deploy-pages OIDC
+  id-token: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
